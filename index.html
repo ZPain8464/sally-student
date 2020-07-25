@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sally's Resume</title>
+</head>
+<body>
+    <div id="application-root"></div>
+    <div id="main-root"></div>
+    <div id="section-root"></div>
+
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js">
+    </script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+    </script>
+    <script
+    src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+    <script type="text/babel">
+
+    function Header(props) {
+        console.log(props.children)
+        return (
+            <header>
+                {props.children}
+            </header>
+        );
+    }
+
+    ReactDOM.render(
+    <Header>
+        <h1 className='sally-name'>Sally Student</h1>
+        <img src='https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg'/>
+        <p className="email">Email: sally.girl@app.io</p>
+        <p className="number">Number: 937-XXX-XXXX</p>
+        
+    </Header>,
+    document.querySelector('#application-root'),
+    );
+
+    function Main(props) {
+        return (
+            <main>
+                {props.children}
+            </main>
+        );
+    }
+
+    ReactDOM.render(
+    <Main>
+        <h2>Work Experience</h2>
+        <h3 className="c-1">Smith Davis</h3>
+            <ul>
+                <li>Job Title: HR Manager</li>
+                <li>2017 - present</li>
+                <li>Created processes for onboarding new employees</li>
+            </ul>
+        <h3 className="c-2">Rotunda</h3>
+            <ul>
+                <li>Job Title: HR Intern</li>
+                <li>2014 - 2017</li>
+                <li>Contributed to and improved hiring process</li>
+            </ul>
+    </Main>,
+    document.querySelector('#main-root'),
+    );
+
+    function Section(props) {
+        return (
+            <section>
+                {props.children}
+            </section>
+        );
+    }
+
+    ReactDOM.render (
+    <Section>
+        <h3 className="education-h3">Education:</h3>
+        <p className="uni">University of Hardknocks, class of 2014</p>
+    </Section>,
+    document.querySelector('#section-root'),
+    )
+
+
+    
+    </script>
+</body>
+</html>
